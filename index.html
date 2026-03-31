@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MotoRent – Sewa motor berkualitas dengan harga terbaik. Pilih motor favoritmu dan pesan langsung via WhatsApp. Cepat, mudah, terpercaya." />
+  <title>MotoRent – Rental Motor Terpercaya</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Tailwind custom config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-950 text-gray-100 font-sans antialiased">
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform duration-200">
+          <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+        </div>
+        <span class="text-xl font-bold tracking-tight">Moto<span class="text-brand-400">Rent</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <li><a href="#fleet" class="hover:text-white transition-colors duration-200">Armada</a></li>
+        <li><a href="#how-it-works" class="hover:text-white transition-colors duration-200">Cara Sewa</a></li>
+        <li><a href="#booking" class="hover:text-white transition-colors duration-200">Booking</a></li>
+        <li><a href="#faq" class="hover:text-white transition-colors duration-200">FAQ</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <a href="#booking" class="hidden md:inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/20 transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]">
+        <i data-lucide="calendar-check" class="w-4 h-4"></i>
+        Pesan Sekarang
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-toggle" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800">
+      <ul class="flex flex-col px-4 py-4 gap-1 text-sm font-medium">
+        <li><a href="#fleet" class="mobile-nav-link block px-3 py-2.5 rounded-lg hover:bg-gray-800 transition-colors">Armada</a></li>
+        <li><a href="#how-it-works" class="mobile-nav-link block px-3 py-2.5 rounded-lg hover:bg-gray-800 transition-colors">Cara Sewa</a></li>
+        <li><a href="#booking" class="mobile-nav-link block px-3 py-2.5 rounded-lg hover:bg-gray-800 transition-colors">Booking</a></li>
+        <li><a href="#faq" class="mobile-nav-link block px-3 py-2.5 rounded-lg hover:bg-gray-800 transition-colors">FAQ</a></li>
+        <li class="pt-2">
+          <a href="#booking" class="mobile-nav-link flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold px-4 py-2.5 rounded-xl transition-colors">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            Pesan Sekarang
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+
+      <!-- Hero Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="assets/hero-bg.png" alt="Motor sport di jalanan kota malam hari" class="w-full h-full object-cover object-center" />
+        <!-- Dark overlay gradient -->
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-gray-950/40"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+        <div class="max-w-2xl">
+
+          <!-- Badge -->
+          <div class="hero-badge inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+            <span class="w-2 h-2 bg-brand-400 rounded-full animate-pulse"></span>
+            Motor Tersedia Sekarang
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+            Sewa Motor <br />
+            <span class="text-gradient">Kapan Saja,</span> <br />
+            Di Mana Saja
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="hero-sub text-lg text-gray-400 leading-relaxed mb-8 max-w-lg">
+            Armada motor pilihan dengan harga transparan. Pesan via WhatsApp, ambil motor, langsung jalan!
+          </p>
+
+          <!-- Stats Row -->
+          <div class="hero-stats flex flex-wrap gap-6 mb-10">
+            <div class="text-center">
+              <p class="text-2xl font-bold text-white">50+</p>
+              <p class="text-xs text-gray-500 mt-0.5">Unit Motor</p>
+            </div>
+            <div class="w-px bg-gray-700 self-stretch hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-2xl font-bold text-white">4.9 ⭐</p>
+              <p class="text-xs text-gray-500 mt-0.5">Rating Pelanggan</p>
+            </div>
+            <div class="w-px bg-gray-700 self-stretch hidden sm:block"></div>
+            <div class="text-center">
+              <p class="text-2xl font-bold text-white">2k+</p>
+              <p class="text-xs text-gray-500 mt-0.5">Pelanggan Puas</p>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="hero-cta flex flex-col sm:flex-row gap-3">
+            <a href="#fleet" class="inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold px-7 py-4 rounded-xl shadow-xl shadow-brand-500/30 transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]">
+              <i data-lucide="search" class="w-5 h-5"></i>
+              Lihat Armada Motor
+            </a>
+            <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-7 py-4 rounded-xl transition-all duration-200 hover:scale-[1.02]">
+              <i data-lucide="play-circle" class="w-5 h-5"></i>
+              Cara Sewa
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-60">
+        <span class="text-xs text-gray-500">Scroll</span>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-500 bounce-arrow"></i>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         HOW IT WORKS
+    ============================================================ -->
+    <section id="how-it-works" class="py-20 bg-gray-900/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14 reveal">
+          <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Proses Mudah</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white">Cara Sewa Motor</h2>
+          <p class="text-gray-400 mt-3 max-w-xl mx-auto">Cukup 3 langkah dan motor siap kamu pakai hari ini</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+          <!-- Step 1 -->
+          <div class="step-card reveal relative bg-gray-800/50 border border-gray-700/50 rounded-2xl p-7 text-center hover:border-brand-500/40 transition-all duration-300 group">
+            <div class="step-number">01</div>
+            <div class="w-14 h-14 bg-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-500/20 transition-colors duration-300">
+              <i data-lucide="search" class="w-7 h-7 text-brand-400"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Pilih Motor</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Browse armada motor kami dan pilih yang paling sesuai kebutuhan kamu.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card reveal relative bg-gray-800/50 border border-gray-700/50 rounded-2xl p-7 text-center hover:border-brand-500/40 transition-all duration-300 group" style="--delay: 0.15s">
+            <div class="step-number">02</div>
+            <div class="w-14 h-14 bg-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-500/20 transition-colors duration-300">
+              <i data-lucide="calendar-days" class="w-7 h-7 text-brand-400"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Isi Formulir</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Masukkan nama, tanggal mulai & selesai sewa dengan mudah di form booking.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card reveal relative bg-gray-800/50 border border-gray-700/50 rounded-2xl p-7 text-center hover:border-brand-500/40 transition-all duration-300 group" style="--delay: 0.3s">
+            <div class="step-number">03</div>
+            <div class="w-14 h-14 bg-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-500/20 transition-colors duration-300">
+              <i data-lucide="message-circle" class="w-7 h-7 text-brand-400"></i>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Konfirmasi WA</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Klik tombol dan pesan booking langsung terkirim ke WhatsApp kami secara otomatis.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FLEET / MOTORBIKE LISTING
+    ============================================================ -->
+    <section id="fleet" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header + Search/Filter -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 reveal">
+          <div>
+            <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Pilihan Motor</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">Armada Kami</h2>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div id="filter-tabs" class="flex items-center gap-2 flex-wrap">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="matic">Matic</button>
+            <button class="filter-btn" data-filter="sport">Sport</button>
+            <button class="filter-btn" data-filter="trail">Trail</button>
+          </div>
+        </div>
+
+        <!-- Search bar -->
+        <div class="relative mb-8 reveal max-w-md">
+          <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none"></i>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Cari motor..."
+            aria-label="Cari motor"
+            class="w-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 text-sm rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-colors"
+          />
+        </div>
+
+        <!-- Bike Cards Grid -->
+        <div id="bike-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Cards injected by JS -->
+        </div>
+
+        <!-- Empty state -->
+        <div id="no-results" class="hidden text-center py-20">
+          <i data-lucide="bike" class="w-12 h-12 text-gray-700 mx-auto mb-4"></i>
+          <p class="text-gray-500">Tidak ada motor yang ditemukan.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BOOKING FORM
+    ============================================================ -->
+    <section id="booking" class="py-20 bg-gray-900/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+          <!-- Info Panel (left) -->
+          <div class="reveal">
+            <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Formulir Booking</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-5">Pesan Motor<br />Sekarang via WA</h2>
+            <p class="text-gray-400 leading-relaxed mb-8">
+              Isi formulir di samping, lalu klik tombol WhatsApp. Kami akan segera konfirmasi ketersediaan motor dan detail pembayaran.
+            </p>
+
+            <!-- Perks -->
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-brand-400"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-white text-sm">Harga Transparan</p>
+                  <p class="text-gray-500 text-xs">Tidak ada biaya tersembunyi, harga sudah termasuk pajak operasional.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="clock" class="w-4 h-4 text-brand-400"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-white text-sm">Respons Cepat</p>
+                  <p class="text-gray-500 text-xs">Tim kami akan merespons pesan WhatsApp dalam waktu kurang dari 15 menit.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="wrench" class="w-4 h-4 text-brand-400"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-white text-sm">Motor Terawat</p>
+                  <p class="text-gray-500 text-xs">Setiap unit dicek dan diservis secara rutin sebelum diserahkan ke pelanggan.</p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Booking stored info -->
+            <div id="saved-bookings-panel" class="hidden mt-8 bg-gray-800/50 border border-gray-700/50 rounded-2xl p-5">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold text-sm text-white flex items-center gap-2">
+                  <i data-lucide="bookmark" class="w-4 h-4 text-brand-400"></i>
+                  Riwayat Booking Tersimpan
+                </h3>
+                <button id="clear-bookings" class="text-xs text-red-400 hover:text-red-300 transition-colors">Hapus Semua</button>
+              </div>
+              <ul id="saved-bookings-list" class="space-y-2 text-xs text-gray-400">
+                <!-- injected by JS -->
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Form Panel (right) -->
+          <div class="reveal" style="--delay: 0.1s">
+            <form id="booking-form" novalidate class="bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 sm:p-8 space-y-5 backdrop-blur-sm">
+
+              <!-- Name -->
+              <div class="form-group">
+                <label for="customer-name" class="form-label">
+                  <i data-lucide="user" class="w-3.5 h-3.5"></i>
+                  Nama Lengkap <span class="text-red-400">*</span>
+                </label>
+                <input
+                  id="customer-name"
+                  name="customer-name"
+                  type="text"
+                  placeholder="Masukkan nama lengkap kamu"
+                  autocomplete="name"
+                  class="form-input"
+                />
+                <p id="error-name" class="form-error hidden">Nama tidak boleh kosong.</p>
+              </div>
+
+              <!-- Phone (optional display) -->
+              <div class="form-group">
+                <label for="customer-phone" class="form-label">
+                  <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                  Nomor WhatsApp <span class="text-gray-500 text-xs">(opsional)</span>
+                </label>
+                <input
+                  id="customer-phone"
+                  name="customer-phone"
+                  type="tel"
+                  placeholder="08xx-xxxx-xxxx"
+                  autocomplete="tel"
+                  class="form-input"
+                />
+              </div>
+
+              <!-- Motorbike Select -->
+              <div class="form-group">
+                <label for="bike-select" class="form-label">
+                  <i data-lucide="bike" class="w-3.5 h-3.5"></i>
+                  Pilih Motor <span class="text-red-400">*</span>
+                </label>
+                <select id="bike-select" name="bike-select" class="form-input">
+                  <option value="">-- Pilih Motor --</option>
+                  <!-- Options injected by JS -->
+                </select>
+                <p id="error-bike" class="form-error hidden">Pilih motor terlebih dahulu.</p>
+              </div>
+
+              <!-- Date Range -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label for="start-date" class="form-label">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                    Tanggal Mulai <span class="text-red-400">*</span>
+                  </label>
+                  <input id="start-date" name="start-date" type="date" class="form-input" />
+                  <p id="error-start" class="form-error hidden">Pilih tanggal mulai.</p>
+                </div>
+
+                <div class="form-group">
+                  <label for="end-date" class="form-label">
+                    <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
+                    Tanggal Selesai <span class="text-red-400">*</span>
+                  </label>
+                  <input id="end-date" name="end-date" type="date" class="form-input" />
+                  <p id="error-end" class="form-error hidden">Tanggal selesai harus setelah tanggal mulai.</p>
+                </div>
+              </div>
+
+              <!-- Notes -->
+              <div class="form-group">
+                <label for="notes" class="form-label">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                  Catatan Tambahan <span class="text-gray-500 text-xs">(opsional)</span>
+                </label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  rows="3"
+                  placeholder="Misal: antar jemput, helm ekstra, dll."
+                  class="form-input resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Price Summary -->
+              <div id="price-summary" class="hidden bg-gray-900/60 border border-brand-500/20 rounded-xl p-4 space-y-2">
+                <div class="flex justify-between text-sm text-gray-400">
+                  <span>Motor</span>
+                  <span id="summary-bike" class="text-white font-medium">-</span>
+                </div>
+                <div class="flex justify-between text-sm text-gray-400">
+                  <span>Durasi</span>
+                  <span id="summary-duration" class="text-white font-medium">-</span>
+                </div>
+                <div class="border-t border-gray-700/50 pt-2 flex justify-between font-bold text-white">
+                  <span>Estimasi Total</span>
+                  <span id="summary-total" class="text-brand-400">-</span>
+                </div>
+                <p class="text-xs text-gray-600">*Estimasi. Harga final dikonfirmasi via WhatsApp.</p>
+              </div>
+
+              <!-- Submit -->
+              <button
+                id="submit-btn"
+                type="submit"
+                class="w-full flex items-center justify-center gap-2.5 bg-green-500 hover:bg-green-400 active:bg-green-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-green-500/20 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Pesan via WhatsApp
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ SECTION
+    ============================================================ -->
+    <section id="faq" class="py-20">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14 reveal">
+          <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Pertanyaan Umum</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white">FAQ</h2>
+        </div>
+
+        <div class="space-y-3 reveal">
+
+          <div class="faq-item bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-sm text-white gap-4" aria-expanded="false">
+              Apakah saya perlu membayar uang muka (DP)?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer hidden px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+              Ya, biasanya diperlukan DP sebesar 50% dari total biaya sewa sebagai tanda jadi. Detail pembayaran akan dikonfirmasi melalui WhatsApp.
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-sm text-white gap-4" aria-expanded="false">
+              Dokumen apa yang harus dibawa saat pengambilan motor?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer hidden px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+              Cukup bawa KTP dan SIM aktif (C). Pastikan dokumen asli dan masih berlaku ya.
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-sm text-white gap-4" aria-expanded="false">
+              Apakah tersedia layanan antar-jemput motor?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer hidden px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+              Ya, kami menyediakan layanan antar-jemput di area kota dengan biaya tambahan. Silahkan informasikan lokasimu saat konfirmasi via WhatsApp.
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-sm text-white gap-4" aria-expanded="false">
+              Bagaimana jika ada kerusakan pada motor saat disewa?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer hidden px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+              Kerusakan ringan akibat pemakaian normal ditanggung oleh MotoRent. Kerusakan akibat kelalaian penyewa akan dibicarakan bersama secara kekeluargaan. Tenang saja! 😊
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-800/40 border border-gray-700/50 rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-sm text-white gap-4" aria-expanded="false">
+              Berapa minimal hari sewa?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 flex-shrink-0 faq-icon transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer hidden px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+              Minimal sewa 1 hari (24 jam). Tidak ada maksimal hari, semakin lama sewa semakin hemat harganya!
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="bg-gray-900 border-t border-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="#hero" class="flex items-center gap-2 mb-4 group w-fit">
+            <div class="w-9 h-9 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/30">
+              <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight">Moto<span class="text-brand-400">Rent</span></span>
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed max-w-sm">
+            Platform rental motor terpercaya. Kami hadir untuk membuat perjalananmu lebih mudah dan menyenangkan.
+          </p>
+          <!-- Social / WA -->
+          <div class="flex items-center gap-3 mt-5">
+            <a href="#booking" class="w-9 h-9 bg-green-600/10 hover:bg-green-600/20 border border-green-600/20 rounded-xl flex items-center justify-center transition-colors" aria-label="WhatsApp">
+              <svg class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 bg-gray-800 hover:bg-gray-700 rounded-xl flex items-center justify-center transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Navigasi</h4>
+          <ul class="space-y-2.5 text-sm text-gray-500">
+            <li><a href="#fleet" class="hover:text-white transition-colors">Armada Motor</a></li>
+            <li><a href="#how-it-works" class="hover:text-white transition-colors">Cara Sewa</a></li>
+            <li><a href="#booking" class="hover:text-white transition-colors">Booking</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Kontak</h4>
+          <ul class="space-y-3 text-sm text-gray-500">
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+              Jl. Raya Sudirman No. 123, Jakarta Pusat
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-400 flex-shrink-0"></i>
+              +62 812-3456-7890
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-brand-400 flex-shrink-0"></i>
+              Setiap hari: 07.00 – 21.00
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Developer Credit -->
+      <div class="border-t border-gray-800 mt-10 pt-6 space-y-4">
+
+        <!-- Copyright row -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-600">
+          <p>© <span id="footer-year"></span> MotoRent. Hak cipta dilindungi.</p>
+          <p>Dibuat dengan ❤️ untuk pemilik rental lokal Indonesia</p>
+        </div>
+
+        <!-- Dev credit card -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          <div class="flex items-center gap-3 bg-gray-800/60 border border-gray-700/50 rounded-xl px-4 py-3">
+            <div class="w-8 h-8 bg-brand-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i data-lucide="code-2" class="w-4 h-4 text-brand-400"></i>
+            </div>
+            <div class="text-xs text-gray-400 leading-snug">
+              <p>Website ini dibuat oleh <span class="font-semibold text-white">Muh. Adib</span></p>
+              <p class="text-gray-600">Butuh website serupa? Hubungi via WhatsApp 👇</p>
+            </div>
+            <a
+              href="https://wa.me/6285123860075?text=Halo%20Muh.%20Adib%2C%20saya%20tertarik%20memesan%20website%20rental%20motor%20seperti%20di%20portofolio%20kamu.%20Boleh%20info%20lebih%20lanjut%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Hubungi Muh. Adib via WhatsApp untuk pembuatan website"
+              class="inline-flex items-center gap-1.5 bg-green-600 hover:bg-green-500 text-white text-xs font-bold px-3 py-2 rounded-lg transition-all duration-200 hover:scale-105 flex-shrink-0 shadow-md shadow-green-900/30"
+            >
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Chat WA
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       TOAST NOTIFICATION
+  ============================================================ -->
+  <div id="toast" role="alert" aria-live="polite" class="fixed bottom-6 right-6 z-[100] hidden">
+    <div class="flex items-center gap-3 bg-gray-800 border border-gray-700 text-white text-sm font-medium px-4 py-3 rounded-xl shadow-2xl min-w-[260px]">
+      <i id="toast-icon" data-lucide="check-circle" class="w-4 h-4 text-green-400 flex-shrink-0"></i>
+      <span id="toast-msg">Berhasil!</span>
+    </div>
+  </div>
+
+
+  <!-- Back to top button -->
+  <button id="back-to-top" aria-label="Kembali ke atas" class="hidden fixed bottom-6 left-6 z-50 w-10 h-10 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white rounded-xl flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110">
+    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+  </button>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
